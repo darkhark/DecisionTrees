@@ -105,7 +105,7 @@ print("\tPrediction: " + str(predictGiniModel2))
 test_dot_data2 = tree.export_graphviz(dt2, out_file=None, feature_names=list(trainDF2.columns.values)[:4],
                                       filled=True, rounded=True, special_characters=True)
 entropyTestGraph = graphviz.Source(test_dot_data2)
-entropyTestGraph.render("treePDFs/EntropyTestWeatherDecisionTree")
+entropyTestGraph.render("treePDFs/GiniTestWeatherDecisionTree")
 print("Gini finished")
 
 print("\n---------Task 5.1---------------\n")
