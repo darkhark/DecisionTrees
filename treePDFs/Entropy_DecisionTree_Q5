@@ -18,7 +18,7 @@ edge [fontname=helvetica] ;
 1 -> 7 ;
 8 [label=<top &le; 0.5<br/>entropy = 0.918<br/>samples = 9<br/>value = [6, 3]>, fillcolor="#f2c09c"] ;
 0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
-9 [label=<media &le; 4.5<br/>entropy = 1.0<br/>samples = 6<br/>value = [3, 3]>, fillcolor="#ffffff"] ;
+9 [label=<home &le; 0.5<br/>entropy = 1.0<br/>samples = 6<br/>value = [3, 3]>, fillcolor="#ffffff"] ;
 8 -> 9 ;
 10 [label=<entropy = 0.971<br/>samples = 5<br/>value = [2, 3]>, fillcolor="#bddef6"] ;
 9 -> 10 ;

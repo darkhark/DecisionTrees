@@ -21,7 +21,7 @@ tree.plot_tree(trainedEntModel)
 train_dot_data1 = tree.export_graphviz(dt1, out_file=None, feature_names=list(trainDF1.columns.values)[:3],
                                        filled=True, rounded=True, special_characters=True)
 entropyTrainGraph1 = graphviz.Source(train_dot_data1)
-entropyTrainGraph1.render("EntropyTrainDecisionTree")
+entropyTrainGraph1.render("treePDFs/EntropyTrainDecisionTree")
 print("Training done.")
 
 predictEntModel1 = trainedEntModel.predict(testDF1)
@@ -30,7 +30,7 @@ print("\tPrediction: " + str(predictEntModel1))
 test_dot_data1 = tree.export_graphviz(dt1, out_file=None, feature_names=list(trainDF1.columns.values)[:3],
                                       filled=True, rounded=True, special_characters=True)
 entropyTestGraph1 = graphviz.Source(test_dot_data1)
-entropyTestGraph1.render("EntropyTestDecisionTree")
+entropyTestGraph1.render("treePDFs/EntropyTestDecisionTree")
 print("Testing done.")
 print("Entropy finished.")
 
@@ -43,14 +43,14 @@ tree.plot_tree(dt1.fit(trainDF1.iloc[:, :3], trainDF1['result']))
 dot_data1 = tree.export_graphviz(dt1, out_file=None, feature_names=list(trainDF1.columns.values)[:3],
                                  filled=True, rounded=True, special_characters=True)
 entropyGraph1 = graphviz.Source(dot_data1)
-entropyGraph1.render("GiniTrainDecisionTree")
+entropyGraph1.render("treePDFs/GiniTrainDecisionTree")
 predictGiniModel1 = trainedGiniModel1.predict(testDF1)
 print("\tWin=1, Loss=0")
 print("\tPrediction: " + str(predictGiniModel1))
 test_dot_data1 = tree.export_graphviz(dt1, out_file=None, feature_names=list(trainDF1.columns.values)[:3],
                                       filled=True, rounded=True, special_characters=True)
 entropyTestGraph1 = graphviz.Source(test_dot_data1)
-entropyTestGraph1.render("GiniTestDecisionTree")
+entropyTestGraph1.render("treePDFs/GiniTestDecisionTree")
 print("Gini finished")
 
 print("\n----------Task 4.2---------------\n")
@@ -76,7 +76,7 @@ tree.plot_tree(trainedEntModel2)
 train_dot_data2 = tree.export_graphviz(dt2, out_file=None, feature_names=list(trainDF2.columns.values)[:4],
                                        filled=True, rounded=True, special_characters=True)
 entropyTrainGraph2 = graphviz.Source(train_dot_data2)
-entropyTrainGraph2.render("EntropyTrainWeatherDecisionTree")
+entropyTrainGraph2.render("treePDFs/EntropyTrainWeatherDecisionTree")
 print("Training done.")
 
 predictEntModel2 = trainedEntModel.predict(testDF1)
@@ -85,7 +85,7 @@ print("\tPrediction: " + str(predictEntModel2))
 test_dot_data2 = tree.export_graphviz(dt2, out_file=None, feature_names=list(trainDF2.columns.values)[:4],
                                       filled=True, rounded=True, special_characters=True)
 entropyTestGraph2 = graphviz.Source(test_dot_data2)
-entropyTestGraph2.render("EntropyTestWeatherDecisionTree")
+entropyTestGraph2.render("treePDFs/EntropyTestWeatherDecisionTree")
 print("Testing done.")
 print("Entropy finished.")
 
@@ -98,14 +98,14 @@ tree.plot_tree(dt2.fit(trainDF2.iloc[:, :4], trainDF2['result']))
 dot_data2 = tree.export_graphviz(dt2, out_file=None, feature_names=list(trainDF2.columns.values)[:4],
                                  filled=True, rounded=True, special_characters=True)
 entropyGraph2 = graphviz.Source(dot_data2)
-entropyGraph2.render("GiniTrainWeatherDecisionTree")
+entropyGraph2.render("treePDFs/GiniTrainWeatherDecisionTree")
 predictGiniModel2 = trainedGiniModel2.predict(testDF2)
 print("\tWin=1, Loss=0")
 print("\tPrediction: " + str(predictGiniModel2))
 test_dot_data2 = tree.export_graphviz(dt2, out_file=None, feature_names=list(trainDF2.columns.values)[:4],
                                       filled=True, rounded=True, special_characters=True)
 entropyTestGraph = graphviz.Source(test_dot_data2)
-entropyTestGraph.render("EntropyTestWeatherDecisionTree")
+entropyTestGraph.render("treePDFs/EntropyTestWeatherDecisionTree")
 print("Gini finished")
 
 print("\n---------Task 5.1---------------\n")
@@ -130,7 +130,7 @@ tree.plot_tree(dt5.fit(trainDF5.iloc[:, :3], trainDF5['result']))
 dot_data = tree.export_graphviz(dt5, out_file=None, feature_names=list(trainDF5.columns.values)[:3],
                                 filled=True, rounded=True, special_characters=True)
 graph = graphviz.Source(dot_data)
-graph.render("Entropy_DecisionTree_Q5")
+graph.render("treePDFs/Entropy_DecisionTree_Q5")
 prediction = entropyFitModel5.predict(testDF5)
 
 precision = precision_score(y_true, prediction)
