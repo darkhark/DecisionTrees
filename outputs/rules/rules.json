@@ -1,0 +1,116 @@
+[
+   {
+      "current_level": 1,
+      "leaf_id": "0cd49c78-4e19-11ea-92bb-985fd3d26a44",
+      "parents": "root",
+      "rule": "if obj[1] == 'Out':"
+   },
+   {
+      "current_level": 2,
+      "leaf_id": "0cd9f168-4e19-11ea-ae52-985fd3d26a44",
+      "parents": "0cd49c78-4e19-11ea-92bb-985fd3d26a44",
+      "rule": "if obj[2] == 'NBC':"
+   },
+   {
+      "current_level": 3,
+      "leaf_id": "0cdcfca8-4e19-11ea-9b3f-985fd3d26a44",
+      "parents": "0cd9f168-4e19-11ea-ae52-985fd3d26a44",
+      "rule": "if obj[0] == 'Home':"
+   },
+   {
+      "current_level": 4,
+      "leaf_id": "0cdde65c-4e19-11ea-83e3-985fd3d26a44",
+      "parents": "0cdcfca8-4e19-11ea-9b3f-985fd3d26a44",
+      "rule": "return 'WIN'"
+   }, 
+   {
+      "current_level": 3,
+      "leaf_id": "0cdf92de-4e19-11ea-9a7d-985fd3d26a44",
+      "parents": "0cd9f168-4e19-11ea-ae52-985fd3d26a44",
+      "rule": "elif obj[0] == 'Away':"
+   },
+   {
+      "current_level": 4,
+      "leaf_id": "0ce07b18-4e19-11ea-a6ca-985fd3d26a44",
+      "parents": "0cdf92de-4e19-11ea-9a7d-985fd3d26a44",
+      "rule": "return 'WIN'"
+   }, 
+   {
+      "current_level": 2,
+      "leaf_id": "0ce1b466-4e19-11ea-bda3-985fd3d26a44",
+      "parents": "0cd49c78-4e19-11ea-92bb-985fd3d26a44",
+      "rule": "elif obj[2] == 'ABC':"
+   },
+   {
+      "current_level": 3,
+      "leaf_id": "0ce471ae-4e19-11ea-8837-985fd3d26a44",
+      "parents": "0ce1b466-4e19-11ea-bda3-985fd3d26a44",
+      "rule": "if obj[0] == 'Away':"
+   },
+   {
+      "current_level": 4,
+      "leaf_id": "0ce532d2-4e19-11ea-bb33-985fd3d26a44",
+      "parents": "0ce471ae-4e19-11ea-8837-985fd3d26a44",
+      "rule": "return 'WIN'"
+   }, 
+   {
+      "current_level": 2,
+      "leaf_id": "0ce6b0dc-4e19-11ea-9afa-985fd3d26a44",
+      "parents": "0cd49c78-4e19-11ea-92bb-985fd3d26a44",
+      "rule": "elif obj[2] == 'ESPN':"
+   },
+   {
+      "current_level": 3,
+      "leaf_id": "0ce79bf0-4e19-11ea-b0dd-985fd3d26a44",
+      "parents": "0ce6b0dc-4e19-11ea-9afa-985fd3d26a44",
+      "rule": "return 'WIN'"
+   }, 
+   {
+      "current_level": 2,
+      "leaf_id": "0ce8e806-4e19-11ea-ae11-985fd3d26a44",
+      "parents": "0cd49c78-4e19-11ea-92bb-985fd3d26a44",
+      "rule": "elif obj[2] == 'CBS':"
+   },
+   {
+      "current_level": 3,
+      "leaf_id": "0ce9d026-4e19-11ea-b076-985fd3d26a44",
+      "parents": "0ce8e806-4e19-11ea-ae11-985fd3d26a44",
+      "rule": "return 'LOSS'"
+   }, 
+   {
+      "current_level": 1,
+      "leaf_id": "0ceb3052-4e19-11ea-8d26-985fd3d26a44",
+      "parents": "root",
+      "rule": "elif obj[1] == 'In':"
+   },
+   {
+      "current_level": 2,
+      "leaf_id": "0cf05cf8-4e19-11ea-920e-985fd3d26a44",
+      "parents": "0ceb3052-4e19-11ea-8d26-985fd3d26a44",
+      "rule": "if obj[0] == 'Home':"
+   },
+   {
+      "current_level": 3,
+      "leaf_id": "0cf3e4b6-4e19-11ea-a91e-985fd3d26a44",
+      "parents": "0cf05cf8-4e19-11ea-920e-985fd3d26a44",
+      "rule": "if obj[2] == 'NBC':"
+   },
+   {
+      "current_level": 4,
+      "leaf_id": "0cf4d000-4e19-11ea-a317-985fd3d26a44",
+      "parents": "0cf3e4b6-4e19-11ea-a91e-985fd3d26a44",
+      "rule": "return 'WIN'"
+   }, 
+   {
+      "current_level": 2,
+      "leaf_id": "0cf6a248-4e19-11ea-ab10-985fd3d26a44",
+      "parents": "0ceb3052-4e19-11ea-8d26-985fd3d26a44",
+      "rule": "elif obj[0] == 'Away':"
+   },
+   {
+      "current_level": 3,
+      "leaf_id": "0cf7975c-4e19-11ea-b759-985fd3d26a44",
+      "parents": "0cf6a248-4e19-11ea-ab10-985fd3d26a44",
+      "rule": "return 'LOSS'"
+   }, 
+{}]

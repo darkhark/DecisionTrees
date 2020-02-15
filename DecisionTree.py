@@ -1,7 +1,9 @@
 from sklearn import tree
 import pandas as pd
 import graphviz
-from sklearn.metrics import precision_score,f1_score, recall_score, accuracy_score
+from sklearn.metrics import precision_score, f1_score, recall_score, accuracy_score
+from chefboost import Chefboost as chef
+import numpy as np
 
 print("\n----------Task 4.1---------------\n")
 # Manually typing up data and encoding variables
@@ -147,4 +149,37 @@ print("\tF1 Score ", F1_score)
 print("\tRecall Score: ", recall_score)
 print("\tAccuracy Score: ", accuracy_score)
 print("\tPrediction for Entropy Q5:", prediction)
+
+print("-----C4.5--------")
+train_5 = {'home': ['Home', 'Away', 'Home', 'Home', 'Away', 'Home', 'Home', 'Away', 'Away', 'Home', 'Away', 'Away',
+                    'Away', 'Home', 'Home', 'Home', 'Home', 'Away', 'Home', 'Home', 'Home', 'Home', 'Home', 'Away'],
+           'top': ['Out', 'Out', 'In', 'Out', 'In', 'Out', 'In', 'Out', 'Out', 'Out', 'Out', 'In', 'Out', 'Out', 'Out',
+                   'Out', 'Out', 'Out', 'In', 'Out', 'Out', 'Out', 'In', 'In'],
+           'media': ['NBC', 'ABC', 'NBC', 'NBC', 'ABC', 'NBC', 'NBC', 'ABC', 'ABC', 'NBC', 'NBC', 'FOX', 'ABC', 'NBC',
+                     'NBC', 'NBC', 'ESPN', 'ABC', 'NBC', 'NBC', 'CBS', 'NBC', 'NBC', 'ABC'],
+           'Decision': ['WIN', 'WIN', 'WIN', 'WIN', 'LOSS', 'WIN', 'WIN', 'WIN', 'WIN', 'WIN', 'WIN', 'LOSS', 'LOSS',
+                        'WIN', 'LOSS', 'LOSS', 'WIN', 'LOSS', 'LOSS', 'WIN', 'LOSS', 'WIN', 'LOSS', 'LOSS']}
+test_5 = {'home': ['Home', 'Home', 'Away', 'Away', 'Home', 'Away', 'Home', 'Home', 'Home', 'Away', 'Home', 'Away'],
+          'top': ['Out', 'In', 'Out', 'Out', 'Out', 'Out', 'In', 'Out', 'Out', 'In', 'Out', 'In'],
+          'media': ['NBC', 'NBC', 'ESPN', 'FOX', 'NBC', 'ABC', 'NBC', 'NBC', 'NBC', 'ABC', 'NBC', 'ABC']}
+y_true5 = ['WIN', 'LOSS', 'WIN', 'WIN', 'WIN', 'WIN', 'WIN', 'WIN', 'WIN', 'LOSS', 'WIN', 'LOSS']
+trainDF5 = pd.DataFrame(data=train_5)
+testDF5 = pd.DataFrame(data=test_5)
+config = {'algorithm': 'C4.5'}
+model = chef.fit(trainDF5.copy(), config)
+pred5 =[]
+for index, instance in testDF5.iterrows():
+    prediction5 = str(chef.predict(model, instance))
+    pred5.append(prediction5)
+y_pred5 = np.array(pred5)
+precision5 = precision_score(y_true5, y_pred5)
+F1_score5 = f1_score(y_true5, y_pred5)
+recall_score5 = recall_score(y_true5, y_pred5)
+accuracy_score5 = accuracy_score(y_true5, y_pred5)
+
+print("\tPrecision Score: ", precision5)
+print("\tF1 Score ", F1_score5)
+print("\tRecall Score: ", recall_score5)
+print("\tAccuracy Score: ", accuracy_score5)
+print("\tPrediction for Entropy Q5:", y_pred5)
 
